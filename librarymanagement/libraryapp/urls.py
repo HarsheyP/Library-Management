@@ -5,5 +5,6 @@ app_name = 'library'
 
 urlpatterns = [
     path('', views.landingpage , name="landingpage"),
+    path('/adminreg', views.adminreg, name="adminreg"),
 
 ]

@@ -77,12 +77,12 @@ WSGI_APPLICATION = 'librarymanagement.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'library',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'USER': 'root',
-        'PASSWORD': 'Root@12345',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3') ,
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '3306',
+        # 'USER': 'root',
+        # 'PASSWORD': 'Root@12345',
     }
 }
 
@@ -133,3 +133,11 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'harsheyp769@gmail.com'
+EMAIL_HOST_PASSWORD = 'harshey7'

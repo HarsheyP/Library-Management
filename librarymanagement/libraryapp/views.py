@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def landingpage(request):
     return render(request, 'landingpage.html')
+
+def adminreg(request):
+    return render(request, 'adminregister.html') 

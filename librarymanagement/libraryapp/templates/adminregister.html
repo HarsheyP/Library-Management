@@ -4,13 +4,16 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Homepage</title>
+        <title>Admin Register</title>
 
         <!-- Styles -->
         <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/formstyles.css' %}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
         <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
         <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+        
 
     </head>
 
@@ -29,9 +32,55 @@
             </header>
     
             <main>
-                <section class="hero">
-                    <div class="container">
+                <section>
+                    <div class="form-container">
+                        <br>
                         <h2 class="m-0">Register as a Librarian</h2>
+                        <form method="post">
+                            <br>
+
+                            {% csrf_token %}
+
+                            {% for field in form %}
+                            <div class="form-item">
+                                <label>{{ field.label_tag }}</label>
+                                <div>
+                                    {{ field }}
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+                            <!-- <div class="form-item">
+                                <span class="material-icons-outlined">
+                                    account_circle
+                                </span>
+                                <input type="text" name="displayname" id="displayname" placeholder="Display Name">
+                            </div>
+
+                            <div class="form-item">
+                                <span class="material-icons-outlined">
+                                    account_circle
+                                </span>
+                                <input type="text" name="user" id="user" placeholder="Username">
+                            </div>
+                        
+                            <div class="form-item">
+                                <span class="material-icons-outlined">
+                                    lock
+                                </span>
+                                <input type="password" name="pass" id="pass" placeholder="Password">
+                            </div> -->
+                            
+                            <div>
+                                <button type="submit">REGISTER</button>
+                            </div>
+                            <br>
+
+                            <p>Already have an account? <a href="#"> Log In </a></p>
+
+                            
+                        </form>
                     </div>
                 </section>   
                 
